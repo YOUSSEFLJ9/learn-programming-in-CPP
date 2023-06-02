@@ -14,7 +14,7 @@ void readint(vector <int> &A)
     cin >> validated;
     }
 }
-void printNumber(vector <int> A)
+void printNumber(vector <int> &A)
 {
     cout <<"\n*******************************************\n";
     for (int &i : A)
