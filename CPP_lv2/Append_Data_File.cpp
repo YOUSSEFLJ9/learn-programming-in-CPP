@@ -4,10 +4,10 @@ using namespace std;
 int main()
 {
     fstream stream;
-    stream.open("myfile.txt", ios::out); /*this mean the file in W (write mode)*/
+    stream.open("myfile.txt", ios::out | ios ::app); /*this mean the file in A (Append mode)*/
     if (stream.is_open())
     {
-        stream << "hello world , this my first stdout stream\n";
+        stream << "hello world , with option to append mode stdout stream\n";
         stream << "this is the sconed stream\n";
         stream.close();
     }
