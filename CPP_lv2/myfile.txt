@@ -1,8 +1,5 @@
-hello world , with option to append mode stdout stream
-this is the sconed stream
-hello world , with option to append mode stdout stream
-this is the sconed stream
-hello world , with option to append mode stdout stream
-this is the sconed stream
-hello world , with option to append mode stdout stream
-this is the sconed stream
+youssef
+nabil
+yahya
+omar
+hassna
