@@ -20,12 +20,8 @@ void fillmatrix(int matrix[3][3])
             
         }
 }
-int main()
+void printmatrix(int matrix[3][3])
 {
-    srand((unsigned)time(NULL));
-    int matrix[3][3];
-
-    fillmatrix(matrix);
     for(int i = 0; i <3 ; i++)
     {
         for(int j = 0; j<3 ; j++)
@@ -34,4 +30,13 @@ int main()
         }
         cout<<"\n";
     }
+}
+int main()
+{
+    srand((unsigned)time(NULL));
+    int matrix[3][3];
+
+    fillmatrix(matrix);
+    printmatrix(matrix);
+    return (0);
 }
