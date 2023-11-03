@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 22:38:39 by ymomen            #+#    #+#             */
-/*   Updated: 2023/11/03 21:33:09 by ymomen           ###   ########.fr       */
+/*   Created: 2023/11/01 22:21:20 by ymomen            #+#    #+#             */
+/*   Updated: 2023/11/03 20:40:39 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <unistd.h>
 #include "libft.h"
 
-int main()
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char	src[20]= "this is good!";
-	char	src1[20]= "this is good!";
-	char	dst[30]  = "";
-	char	dst1[30]= "";
+	size_t	lens;
+	size_t	lend;
+	size_t	i;
 
-	printf("ft_: %lu\t%s\n", ft_strlcpy(dst, src, 0), dst);
-	printf("str: %lu\t%s\n", strlcpy(dst1, src1, 0), dst1);
-	return (0);
+	lens = ft_strlen(src);
+	lend = ft_strlen(dst);
+	i = 0;
+	if (dstsize <= lend)
+		return (lens + dstsize);
+	while ((lend + i < dstsize - 1) && src[i])
+	{
+		dst[lend + i] = src[i];
+		i++;
+	}
+	dst[lend + i] = '\0';
+	return (lend + lens);
 }

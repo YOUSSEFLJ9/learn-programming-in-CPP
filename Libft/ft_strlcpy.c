@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 22:38:39 by ymomen            #+#    #+#             */
-/*   Updated: 2023/11/03 21:33:09 by ymomen           ###   ########.fr       */
+/*   Created: 2023/11/01 21:16:21 by ymomen            #+#    #+#             */
+/*   Updated: 2023/11/03 21:35:47 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <unistd.h>
 #include "libft.h"
 
-int main()
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char	src[20]= "this is good!";
-	char	src1[20]= "this is good!";
-	char	dst[30]  = "";
-	char	dst1[30]= "";
+	size_t	count;
+	size_t	lens;
 
-	printf("ft_: %lu\t%s\n", ft_strlcpy(dst, src, 0), dst);
-	printf("str: %lu\t%s\n", strlcpy(dst1, src1, 0), dst1);
-	return (0);
+	count = 0;
+	lens = 0;
+	while (src[lens])
+		lens++;
+	if (dstsize == 0)
+		return (lens);
+	while (src[count] != '\0' && count < dstsize - 1)
+	{
+		dst[count] = src[count];
+		count++;
+	}
+	dst[count] = '\n';
+	return (lens);
 }
