@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:21:20 by ymomen            #+#    #+#             */
-/*   Updated: 2023/11/03 20:40:39 by ymomen           ###   ########.fr       */
+/*   Updated: 2023/11/06 01:06:52 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	lend;
 	size_t	i;
 
+	if (!dst && dstsize == 0)
+		return (0);
 	lens = ft_strlen(src);
 	lend = ft_strlen(dst);
 	i = 0;

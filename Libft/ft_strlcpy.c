@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 21:16:21 by ymomen            #+#    #+#             */
-/*   Updated: 2023/11/03 21:35:47 by ymomen           ###   ########.fr       */
+/*   Updated: 2023/11/04 01:46:50 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		lens++;
 	if (dstsize == 0)
 		return (lens);
-	while (src[count] != '\0' && count < dstsize - 1)
+	while (src[count] != '\0' && count + 1 < dstsize)
 	{
 		dst[count] = src[count];
 		count++;
 	}
-	dst[count] = '\n';
+	dst[count] = '\0';
 	return (lens);
 }

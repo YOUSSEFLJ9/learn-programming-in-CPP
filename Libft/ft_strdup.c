@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 22:38:39 by ymomen            #+#    #+#             */
-/*   Updated: 2023/11/06 16:37:02 by ymomen           ###   ########.fr       */
+/*   Created: 2023/11/04 19:08:51 by ymomen            #+#    #+#             */
+/*   Updated: 2023/11/04 19:25:55 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
 #include "libft.h"
 
-char	d(unsigned int k, char d)
+char	*ft_strdup(const char *s1)
 {
-	return (d + k);
+	char	*dup;
+	int		len;
+	int		i;
+
+	len = 0;
+	i = 0;
+	while (s1[len])
+		len++;
+	dup = (char *) malloc(len +1 * sizeof(char));
+	if (!dup)
+		return (NULL);
+	while (i < len)
+	{
+		dup[i] = s1[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }
-
-int	main(void)
-{
-	char	(*k)(unsigned int, char);
-	char	*dg = "this world is amazing";
-
-	k = d;
-	printf("%s\n", ft_strmapi(dg, k));
-	return (0);
-}
-
-// int main(int ac, char **av)
-// {
-// 	if (ac != 3)
-// 		return (0);
-
-// 	printf("%d\n", contdel(av[1], av[2][0]));
-// 	return (0);
-// }

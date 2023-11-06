@@ -6,15 +6,34 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 20:33:26 by ymomen            #+#    #+#             */
-/*   Updated: 2023/11/03 19:09:06 by ymomen           ###   ########.fr       */
+/*   Updated: 2023/11/06 15:30:46 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define MAX_DOUBLE 922337203685477580
 # include <unistd.h>
+# include <stdlib.h>
 
 /* FUNCTIONS */
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_itoa(int n);
+char	**ft_split(char const *s, char c);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strdup(const char *s1);
+void	*ft_calloc(size_t count, size_t size);
+int		ft_atoi(const char *str);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memchr(void *s, int c, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n );
+int		ft_toupper(int c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+int		ft_tolower(int c);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
