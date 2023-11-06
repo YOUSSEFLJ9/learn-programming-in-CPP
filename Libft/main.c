@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 22:38:39 by ymomen            #+#    #+#             */
-/*   Updated: 2023/11/06 16:37:02 by ymomen           ###   ########.fr       */
+/*   Updated: 2023/11/06 20:52:11 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,15 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "libft.h"
-
-char	d(unsigned int k, char d)
-{
-	return (d + k);
-}
+#include <fcntl.h>
 
 int	main(void)
 {
-	char	(*k)(unsigned int, char);
-	char	*dg = "this world is amazing";
+	int	f;
 
-	k = d;
-	printf("%s\n", ft_strmapi(dg, k));
+	f = open("./youssef.txt", (O_RDWR | O_CREAT));
+	printf("%d\n", f);
+	ft_putnbr_fd(-4572, f);
 	return (0);
 }
 

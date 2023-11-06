@@ -6,7 +6,7 @@
 /*   By: ymomen <ymomen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 15:20:33 by ymomen            #+#    #+#             */
-/*   Updated: 2023/11/05 22:40:47 by ymomen           ###   ########.fr       */
+/*   Updated: 2023/11/06 19:28:31 by ymomen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,11 @@ static char	**fullandfree(char **ptr, const char *s, char c, int count_words)
 char	**ft_split(char const *s, char c)
 {
 	int		count_words;
-	int		start;
-	int		end;
 	char	**ptr;
 	int		i;
 
 	i = 0;
 	count_words = contdel(s, c);
-	start = 0;
-	end = 0;
 	ptr = (char **) malloc(sizeof(char *) * (count_words + 1));
 	if (!ptr)
 		return (NULL);
