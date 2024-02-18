@@ -35,16 +35,15 @@ void printmatirx(int arr[3][3], short rows, short cols)
 }
 int  summtx(int arr[3][3], int ar[3][3], short rows, short cols)
 {
-	int reslt = 0;
 	for(int i = 0 ; i < rows; i++)
 	{
 		for(int j = 0; j < cols; j++)
 		{
-			if (ar[i][j] == arr[i][j])
-				reslt++;
+			if (ar[i][j] != arr[i][j])
+				return(0);
 		}
 	}
-	return (reslt);
+	return (1);
 }
 int main()
 {
@@ -57,7 +56,7 @@ int main()
 	printmatirx(matrix1, 3, 3);
 	std::cout <<"\nthe matrix 2 is :\n";
 	printmatirx(matrix2, 3, 3);
-	if (summtx(matrix1,matrix2,3,3) == 9)
+	if (summtx(matrix1,matrix2,3,3))
 		printf("yes: the matrixs are equal\n");
 	else
 		printf("no: the matrixs are Not equal\n");
